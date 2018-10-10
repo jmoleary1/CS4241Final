@@ -1,0 +1,12 @@
+{
+  "name": "CS4241Final",
+  "version": "0.1.0",
+  "author": "John O'Leary",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "sqlite3": "^4.0.2"
+  }
+}

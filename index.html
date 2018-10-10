@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Kevin Bacon!</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="FindKevin.js"></script>
+</head>
+<body onload="GetScores()">
+    <div id="header">
+        <p id="score">Score: 0</p>
+        <form id = "SubmitForm" action="/AddScore" method="post" target="MainPage">
+            <input type="text" name="playerName">
+            <input id=HiddenScore type="hidden" value=0 name="finalScore">
+            <button>I Found Kevin Bacon!</button>
+        </form>
+        <iframe width="0" height="0" border="0" name="MainPage" id="MainPage"></iframe>
+    </div>
+
+    <iframe id="wikipediaPage" src="https://en.wikipedia.org/wiki/special:random" onLoad="increseScore()"></iframe>
+
+    <div id="scores">
+        <p>currently nothing</p>
+    </div>
+</body>
+
+</html>
