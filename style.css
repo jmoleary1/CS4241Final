@@ -15,6 +15,15 @@
     left: 10%;
 }
 #scores{
+    color: darkgreen;
+}
+p{
+    font-size: 20px;
+    top:3.5%;
+}
+#HowToPlayButton{
     position: absolute;
-    top:100%;
+    top:3.5%;
+    left: 500px;
+
 }

@@ -18,6 +18,9 @@ var server = http.createServer (function (req, res) {
         case '/':
             sendFile(res, 'index.html')
             break
+        case '/Kevin_Bacon.jpg':
+            sendFile(res, 'Kevin_Bacon.jpg')
+            break
         case '/index.html':
             sendFile(res, 'index.html')
             break
@@ -30,15 +33,20 @@ var server = http.createServer (function (req, res) {
         case '/scoreboard.html':
             sendFile(res,'scoreboard.html')
             break
+        case '/scoreStyle.css':
+            sendCSS(res, 'scoreStyle.css')
+            break
+        case '/instructions.html':
+            sendFile(res,'instructions.html')
+            break
         case '/AddScore':
             collectRequestData(req, result => {
                 scores.push(result);
-                console.log("putting results in database");
                 db.serialize(function(){
-                    var stmt = db.prepare("INSERT INTO langs VALUES(?,?)")
+                    var stmt = db.prepare("INSERT INTO scores VALUES(?,?)")
                     stmt.run(result.playerName, result.finalScore);
                     stmt.finalize();
-                    db.each("SELECT name, score FROM langs", function(err,row){
+                    db.each("SELECT name, score FROM scores", function(err,row){
                     })
                 })
             });
@@ -94,9 +102,9 @@ function collectRequestData(request, callback) {
 function ConvertScores(callback){
     var retVal="";
     db.serialize(function(){
-        db.all('SELECT * FROM langs ORDER BY score LIMIT 10', function(err, rows){
+        db.all('SELECT * FROM scores ORDER BY score LIMIT 20', function(err, rows){
             rows.forEach(function (row){
-                retVal= retVal + row.name + "    " + row.score + "<br>";
+                retVal= retVal + row.name + ":    " + row.score + "<br>";
             })
             callback(retVal);
         })

@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Scoreboard</title>
+    <link rel="stylesheet" href="scoreStyle.css">
+    <script type="text/javascript" src="FindKevin.js"></script>
 </head>
-<body>
+<body onload="GetScores()" bgcolor="#d3d3d3">
 
-<h1>High Scores:</h1>
-<div id="scoreboard">
 
-<p>It got here!</p>
-</div>
-
+    <img src="Kevin_Bacon.jpg" height="400" width="300">
+    <h1><u>High Scores:</u></h1>
+    <div id="scores"></div>
+    <div id="playAgainButton">
+        <button onclick="PlayAgain()">Play Again!</button>
+    </div>
 </body>
 </html>

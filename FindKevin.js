@@ -30,3 +30,14 @@ function GetScores() {
     xmlhttp.open("GET", "GetScores", true);
     xmlhttp.send();
 }
+
+function ScoreBoardPage(){
+    window.location = "/scoreboard.html"
+}
+function PlayAgain(){
+    score=-1;
+    window.location = "/index.html"
+}
+function howToPlay(){
+    window.location = '/instructions.html'
+}
