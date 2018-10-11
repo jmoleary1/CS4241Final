@@ -32,6 +32,7 @@ function GetScores() {
 }
 
 function ScoreBoardPage(){
+    console.log("it got here")
     window.location = "/scoreboard.html"
 }
 function PlayAgain(){
@@ -39,5 +40,6 @@ function PlayAgain(){
     window.location = "/index.html"
 }
 function howToPlay(){
+    console.log("it got here")
     window.location = '/instructions.html'
 }
