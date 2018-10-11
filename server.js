@@ -27,9 +27,6 @@ var server = http.createServer (function (req, res) {
         case '/style.css':
             sendCSS(res, 'style.css')
             break
-        case '/FindKevin.js':
-            sendFile(res, 'FindKevin.js')
-            break
         case '/scoreboard.html':
             sendFile(res,'scoreboard.html')
             break
